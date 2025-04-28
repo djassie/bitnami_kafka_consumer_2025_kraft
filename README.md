@@ -1,6 +1,6 @@
-#### Working solution for 2025 version 
+#### Working solution for 2025 version
 
-Answer copied from stackoverflow[https://stackoverflow.com/a/75680634/10531665], here from the answer `BROKER` is replaced with `NODE`, 
+Answer copied from stackoverflow[https://stackoverflow.com/a/75680634/10531665], here from the answer `BROKER` is replaced with `NODE`,
 everything remains same
 
 ````yaml
@@ -23,7 +23,7 @@ services:
 ````
 
 
-2025 April update, 
+2025 April update,
 
 For the Producer/Consumer properties file, everything remains same except, the port will be `9094`
 
