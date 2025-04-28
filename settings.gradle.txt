@@ -1,0 +1,6 @@
+rootProject.name = 'appkafka01'
+
+include 'producer1'
+include 'consumer1'
+include 'consumer2'
+include 'consumer3'
