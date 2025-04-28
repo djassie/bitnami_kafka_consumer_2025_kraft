@@ -1,3 +1,33 @@
+#### Working solution for 2025 version 
+
+Answer copied from stackoverflow[https://stackoverflow.com/a/75680634/10531665], here from the answer `BROKER` is replaced with `NODE`, 
+everything remains same
+
+````yaml
+services:
+  kafka:
+    image: 'bitnami/kafka:latest'
+    ports:
+      - '9094:9094'
+
+    environment:
+      - KAFKA_ENABLE_KRAFT=yes
+      - KAFKA_CFG_NODE_ID=1
+      - KAFKA_CFG_PROCESS_ROLES=broker,controller
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@:9093
+      - ALLOW_PLAINTEXT_LISTENER=yes
+````
+
+
+2025 April update, 
+
+For the Producer/Consumer properties file, everything remains same except, the port will be `9094`
+
+
 #### Bitnami Kafka Kraft version without Zookeeper
 
 This example shows how to use Bitnami Kafka, with Kraft, without additional Zookeeper

@@ -1,7 +1,7 @@
 services:
   kafka:
     image: docker.io/bitnami/kafka:latest
-#    container_name: kafka
+    container_name: kafka
     ports:
       - "9092:9092"
     volumes:
